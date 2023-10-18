@@ -1,20 +1,35 @@
 body {
 background-color: burlywood;
+
 }
+
+h1{
+    text-align: center;
+}
+button {
+    width: 100px;
+    margin-bottom: 30px;
+}
+
+#content {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
 
 #container {
 
-    display: flex;
+display: flex;
+border-style: solid;
+width: 450px
 }
 
 .cells {
     height: 30px;
     width: 30px;
     border-style: solid;
-    border-width: 1px;
+    border-width: 0px;
     border-color: aliceblue;
-}
-
-.drawnon {
-
 }
