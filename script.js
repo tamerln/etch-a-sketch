@@ -1,13 +1,23 @@
+
 const container = document.querySelector("#container");
 const reset = document.querySelector('#reset');
+const sizeButton = document.querySelector('#size');
+let size = 16;
 
-for (let i = 1; i < 16; i++) {
-let rows = document.createElement('div');
-rows.classList.add('rows');
-container.appendChild(rows);
-    for (let j = 0; j < 16; j++) {
+sizeButton.addEventListener("click", function(e) {
+    size = window.prompt("Enter desired size: ");
+    container.innerHTML = '';
+    createGrid(size);
+})
+
+function createGrid(size) {
+for (let i = 1; i < size; i++) {
+let row = document.createElement('div');
+row.classList.add('rows');
+container.appendChild(row);
+    for (let j = 0; j < size; j++) {
         let cells = document.createElement('div');
-        rows.appendChild(cells);
+        row.appendChild(cells);
         cells.classList.add('cells');
         cells.addEventListener("mouseover", function(event) {
             event.target.style.backgroundColor = 'black';
@@ -18,5 +28,6 @@ container.appendChild(rows);
             
     }
 }
+}
 
-
+createGrid(size);
