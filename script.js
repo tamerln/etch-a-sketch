@@ -6,8 +6,13 @@ let size = 16;
 
 sizeButton.addEventListener("click", function(e) {
     size = window.prompt("Enter desired size: ");
-    container.innerHTML = '';
-    createGrid(size);
+    if (size < 100 && size != NaN && size != undefined && size != null) {
+        container.innerHTML = '';
+        createGrid(size);
+    } else {
+        alert('Please enter an integer less than or equal to 100 with no decimal points');
+    }
+    
 })
 
 function createGrid(size) {
